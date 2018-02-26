@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CryptoService } from './services/crypto.service';
+import { CryptoItemComponent } from './components/crypto-item/crypto-item.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CryptoItemComponent
   ],
   imports: [
     BrowserModule

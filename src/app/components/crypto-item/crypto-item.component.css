@@ -1,0 +1,41 @@
+.crypto-item {
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: green;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 5px;
+
+}
+
+.crypto-item > .header, .crypto-item > .footer {
+    border-bottom: white;
+    text-align: center;
+    height: 20%;
+}
+
+.crypto-item > .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:60%;
+
+}
+
+.crypto-item  .crypto-item-content {
+    margin-left: 5px;
+}
+
+.crypto-item .currency-symbol {
+    /* padding-top:15px; */
+}
+
+.crypto-item > .footer {
+    font-size: 1rem;
+}
