@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Observable';
 import { Currency } from "../models/Currency";
 
@@ -15,7 +15,7 @@ export class CryptoService {
   
   private api: string = ' https://api.coinmarketcap.com/v1/';
 
-  constructor(private httpClient: HttpClient, private httpHeaders: HttpHeaders) { 
+  constructor(private httpClient: HttpClient) { 
 
   }
   /**
@@ -23,8 +23,8 @@ export class CryptoService {
    */
   ticker(): Observable<Currency[]> {
     return this.httpClient.get(this.api+'ticker')
-      .map((response: Response) => response.json())
-        .catch((error:any)=> Observable.throw(error.json().error || 'Server Error'));
+      .map((response: Response) => response.json());
+        // .catch((error:any)=> Observable.throw(error.json.error || 'Server Error'));
   }
 
 }

@@ -1,16 +1,18 @@
-<div class="crypto-item"> 
-  <div class="header">
-    <h5>BITCOIN</h5>
-  </div>
-  <div class="main" >
-    <div class="currency-symbol crypto-item-content">
-      <h5>$</h5>
+<ul>
+  <li *ngFor="let currency of currencies">
+    <div class="crypto-item">
+      <div class="currency-row">
+        <img alt="crypto currency image" class="logo"/>
+        <div class="crypto-symbol">{{currency.Symbol}}</div>
+        <div class="crypto-name">{{currency.Name}}</div>
+        <div class="crypto-value">$ &nbsp;{{currency.Price}}</div>
+      </div>
+      <div class="trend-row">
+        <div id="hour-trend" class="trend-item">{{currency.Change[0]}}</div>
+        <div class="day-trend trend-item">{{currency.Change[1]}}</div>
+        <div id="week-trend" class="trend-item">{{currency.Change[2]}}</div>
+      </div>
     </div>
-    <div class="currency-text crypto-item-content">
-      <h2>56.12</h2>
-    </div>
-  </div>
-  <div class="footer">
-    <span>footer text</span>
-  </div>
-</div>
+  </li>
+
+</ul>
