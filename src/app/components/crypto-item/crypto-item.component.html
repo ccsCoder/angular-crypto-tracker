@@ -1,18 +1,17 @@
-<ul>
-  <li *ngFor="let currency of currencies">
-    <div class="crypto-item">
+<div class="crypto-list">
+  <div *ngFor="let asset of assets" class="">
+    <div class="crypto-item list-divs">
       <div class="currency-row">
-        <img alt="crypto currency image" class="logo"/>
-        <div class="crypto-symbol">{{currency.Symbol}}</div>
-        <div class="crypto-name">{{currency.Name}}</div>
-        <div class="crypto-value">$ &nbsp;{{currency.Price}}</div>
-      </div>
-      <div class="trend-row">
-        <div id="hour-trend" class="trend-item">{{currency.Change[0]}}</div>
-        <div class="day-trend trend-item">{{currency.Change[1]}}</div>
-        <div id="week-trend" class="trend-item">{{currency.Change[2]}}</div>
+        <img alt="crypto currency image" src="{{asset.icon}}" class="logo"/>
+        <div class="crypto-symbol">({{asset.symbol}})</div>
+        <div class="crypto-name truncate" title="{{asset.name}}">{{asset.name}}</div>
       </div>
     </div>
-  </li>
 
-</ul>
+    <!-- <div style="display:block; width:calc(100% - 10); color: black; height:50px; background: orange"> -->
+
+    <!-- </div> -->
+  </div>
+
+</div>
+<app-crypto-details></app-crypto-details>

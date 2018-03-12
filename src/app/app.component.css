@@ -1,0 +1,22 @@
+.app-title {
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    padding: 10px;
+    overflow: none;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width:90%;
+    box-sizing: border-box;
+    margin:auto;
+    flex-direction: column;
+}
+.content-box {
+    /* overflow-x: hidden;
+    overflow-y: auto;
+    height:100%;
+    width:100%; */
+}

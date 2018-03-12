@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Currency } from '../../models/Currency';
+import { Asset } from '../../models/Assets';
 import { CryptoService } from '../../services/crypto.service';
+import { CryptoList } from "../../models/ApplicableCryptos";
 
 @Component({
   selector: 'app-crypto-item',
@@ -11,7 +12,7 @@ export class CryptoItemComponent implements OnInit {
 
   constructor(private cryptoService: CryptoService) { }
 
-  currencies : Currency[];
+  assets : Asset[];
 
 
   ngOnInit() {
@@ -19,8 +20,15 @@ export class CryptoItemComponent implements OnInit {
   }
 
   public getCurrencies(): void {
-    this.cryptoService.ticker().subscribe(jsonData=>{
-      return new Currency().fromJson(jsonData);
+    this.cryptoService.getAllAssets().subscribe(assetData=> {
+      this.assets =[];
+
+      assetData.map(asset_datum => { 
+        let tempAsset = new Asset(asset_datum);
+        if(tempAsset.isCrypto && CryptoList.getCryptoList().indexOf(tempAsset.symbol) > -1) {
+          this.assets.push (tempAsset);
+        }
+      });
     });
   }
 

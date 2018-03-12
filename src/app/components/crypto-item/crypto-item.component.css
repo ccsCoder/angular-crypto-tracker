@@ -1,9 +1,58 @@
+.crypto-list {
+    margin: 10px;
+    margin-top:50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height:90%;
+    flex-wrap: wrap;
+}
+
 .crypto-item {
     padding: 5px;
+    cursor:pointer;
+    margin: 10px;
+    box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.75);
+    height:200px;
+    width:200px;
+    
 }
-.crypto-item > .currency-row, .crypto-item > .trend-row {
-    display: flex;
+
+.crypto-item:hover {
+    box-shadow: 3px 3px 8px 0px rgba(180, 107, 107, 0.75);
+}
+
+.currency-row {
+    display:flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
+    height:100%;
+    width:100%;
+}
+
+.truncate {
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.currency-row > .logo {
+    height:70px;
+    width:70px;
+    padding:5px;
+}
+
+.currency-row > .crypto-symbol {
+    font-size: 1.5rem;
+    color: darkslateblue;
+    text-transform: uppercase;
+}
+.currency-row > .crypto-name {
+    font-size: 1.2rem;
+    color: tomato;
+    text-transform: uppercase;
+
 }
 

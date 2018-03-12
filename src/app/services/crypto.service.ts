@@ -2,18 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Observable';
 import { Currency } from "../models/Currency";
+import { Asset } from "../models/Assets";
 
-// import { map} from "rxjs/operators";
 import "rxjs/add/operator/map"
 import "rxjs/add/operator/catch"
 
 import { Response } from '@angular/http/';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Injectable()
 export class CryptoService {
   
-  private api: string = ' https://api.coinmarketcap.com/v1/';
+  private api: string = ' https://rest.coinapi.io/v1/';
+  private headers = {
+    headers: new HttpHeaders({
+      'X-CoinAPI-Key':'28518345-4619-48C0-A6D8-84C804A281A3',
+      'Accept' : 'application/json'
+
+    })
+  };
 
   constructor(private httpClient: HttpClient) { 
 
@@ -21,10 +29,8 @@ export class CryptoService {
   /**
    * Wow, this was tricky !!!
    */
-  ticker(): Observable<Currency[]> {
-    return this.httpClient.get(this.api+'ticker')
-      .map((response: Response) => response.json());
-        // .catch((error:any)=> Observable.throw(error.json.error || 'Server Error'));
+  getAllAssets(): Observable<Asset[]> {
+    return this.httpClient.get<Asset[]>(this.api+'assets', this.headers);
   }
 
 }

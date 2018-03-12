@@ -7,13 +7,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CryptoService } from './services/crypto.service';
 import { CryptoItemComponent } from './components/crypto-item/crypto-item.component';
+import { CryptoDetailsComponent } from './components/crypto-details/crypto-details.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CryptoItemComponent
+    CryptoItemComponent,
+    CryptoDetailsComponent
   ],
   imports: [
     BrowserModule,
