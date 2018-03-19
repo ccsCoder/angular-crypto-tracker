@@ -5,11 +5,9 @@ export class Asset {
     isCrypto:boolean;
     icon:string;
 
-    static fromJson(json:any):Asset {
-        return new Asset(json);
+    static fromJsonArray(jsonArray:any[]):Asset[] {
+        return jsonArray.map((jsonItem)=> {return new Asset(jsonItem);});
     }
-
-
 
     constructor(json) {
         this.symbol = json.asset_id;
@@ -17,4 +15,5 @@ export class Asset {
         this.isCrypto = json.type_is_crypto;
         this.icon = `../assets/${this.symbol}.jpeg`;
     }
+    
 }

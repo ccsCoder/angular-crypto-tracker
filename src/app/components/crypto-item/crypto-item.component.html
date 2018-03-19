@@ -1,17 +1,12 @@
 <div class="crypto-list">
-  <div *ngFor="let asset of assets" class="">
-    <div class="crypto-item list-divs">
-      <div class="currency-row">
-        <img alt="crypto currency image" src="{{asset.icon}}" class="logo"/>
-        <div class="crypto-symbol">({{asset.symbol}})</div>
-        <div class="crypto-name truncate" title="{{asset.name}}">{{asset.name}}</div>
-      </div>
-    </div>
-
-    <!-- <div style="display:block; width:calc(100% - 10); color: black; height:50px; background: orange"> -->
-
-    <!-- </div> -->
-  </div>
-
+  <ul>
+      <li *ngFor="let asset of assets" class="">
+        <div class="crypto-item" (click)="onSelectCrypto(asset)">
+              <img alt="crypto currency image" src="{{asset.icon}}" class="logo component" />
+              <div class="crypto-name truncate component" title="{{asset.name}}">{{asset.name}}</div>
+              <div class="crypto-symbol component">{{asset.symbol}}</div>
+        </div>
+          <app-crypto-details></app-crypto-details>
+      </li>
+  </ul>
 </div>
-<app-crypto-details></app-crypto-details>

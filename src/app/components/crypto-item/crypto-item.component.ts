@@ -13,10 +13,15 @@ export class CryptoItemComponent implements OnInit {
   constructor(private cryptoService: CryptoService) { }
 
   assets : Asset[];
-
+  showDetails: boolean = false;
 
   ngOnInit() {
     this.getCurrencies();
+  }
+
+  public onSelectCrypto(asset): void {
+    this.showDetails = !this.showDetails;
+    console.log(this.showDetails);
   }
 
   public getCurrencies(): void {
@@ -27,6 +32,7 @@ export class CryptoItemComponent implements OnInit {
         let tempAsset = new Asset(asset_datum);
         if(tempAsset.isCrypto && CryptoList.getCryptoList().indexOf(tempAsset.symbol) > -1) {
           this.assets.push (tempAsset);
+          
         }
       });
     });

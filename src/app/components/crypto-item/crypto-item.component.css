@@ -1,34 +1,40 @@
 .crypto-list {
-    margin: 10px;
-    margin-top:50px;
+    width:100%;
     display: flex;
-    justify-content: flex-start;
     align-items: flex-start;
-    height:90%;
-    flex-wrap: wrap;
+    justify-content: center;
+
 }
+
+.crypto-list > ul {
+    list-style-type: none;
+    width:35%;
+}
+
+.crypto-list li {
+    padding: 10px;
+    margin-top:10px;
+
+}
+
 
 .crypto-item {
-    padding: 5px;
     cursor:pointer;
-    margin: 10px;
-    box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.75);
-    height:200px;
-    width:200px;
-    
-}
-
-.crypto-item:hover {
-    box-shadow: 3px 3px 8px 0px rgba(180, 107, 107, 0.75);
-}
-
-.currency-row {
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 4px 2px -2px gainsboro;
+    height: 60px;
     display:flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    height:100%;
     width:100%;
+    transition: all 200ms ease-out;
+}
+
+.crypto-item:hover {
+    box-shadow: 0px 0px 10px 1px darkslategray;
+    transform: scale(1.1);
+    
 }
 
 .truncate {
@@ -38,21 +44,20 @@
   text-overflow: ellipsis;
 }
 
-.currency-row > .logo {
-    height:70px;
-    width:70px;
+.logo {
     padding:5px;
 }
 
-.currency-row > .crypto-symbol {
-    font-size: 1.5rem;
+.crypto-symbol {
+    font-size: 1.2rem;
     color: darkslateblue;
     text-transform: uppercase;
 }
-.currency-row > .crypto-name {
+.crypto-name {
     font-size: 1.2rem;
     color: tomato;
     text-transform: uppercase;
-
 }
-
+.crypto-list .component {
+    margin: 10px;
+}
