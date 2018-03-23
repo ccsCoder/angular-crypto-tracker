@@ -1,12 +1,12 @@
 <div class="crypto-list">
   <ul>
-      <li *ngFor="let asset of assets" class="">
-        <div class="crypto-item" (click)="onSelectCrypto(asset)">
+      <li *ngFor="let asset of assets">
+        <a class="crypto-item"  [routerLink]= "[ { outlets: {'currency-details-outlet': ['currdetails', asset.symbol ]} }]">
               <img alt="crypto currency image" src="{{asset.icon}}" class="logo component" />
               <div class="crypto-name truncate component" title="{{asset.name}}">{{asset.name}}</div>
               <div class="crypto-symbol component">{{asset.symbol}}</div>
-        </div>
-          <app-crypto-details></app-crypto-details>
+        </a>
       </li>
+      <router-outlet name="currency-details-outlet"></router-outlet>
   </ul>
 </div>

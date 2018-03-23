@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CryptoService } from './services/crypto.service';
 import { CryptoItemComponent } from './components/crypto-item/crypto-item.component';
 import { CryptoDetailsComponent } from './components/crypto-details/crypto-details.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 
@@ -20,7 +21,8 @@ import { CryptoDetailsComponent } from './components/crypto-details/crypto-detai
   imports: [
     BrowserModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
     
   ],
   providers: [CryptoService],
